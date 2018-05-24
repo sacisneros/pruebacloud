@@ -1,0 +1,6 @@
+Turores:
+load DATA INFILE "E:/BASE DE DATOS SANCHEZ/Tutores.txt" INTO TABLE profesor;
+Grados:
+load DATA INFILE "E:/BASE DE DATOS SANCHEZ/Grados.txt" INTO TABLE grado;
+Estudiante:
+load DATA INFILE "E:/BASE DE DATOS SANCHEZ/Estudiante.txt" INTO TABLE estudiante;
