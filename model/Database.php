@@ -3,9 +3,10 @@
 class Database {
 
     private static $dbName = 'voto';
-    private static $dbHost = 'localhost';
-    private static $dbUsername = 'root';
-    private static $dbUserPassword = '';
+    private static $dbHost = 'postgresproyecto.postgres.database.azure.com';
+    private static $port = '5432';
+    private static $dbUsername = 'pgproyecto@postgresproyecto';
+    private static $dbUserPassword = 'Sextofisico.1';
     
     private static $conexion = null;
 
@@ -16,7 +17,8 @@ class Database {
     public static function connect() {
         if (null == self::$conexion) {
             try {
-                self::$conexion = new PDO("mysql:host=" . self::$dbHost . ";" . "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
+                self::$conexion = new PDO("pgsql:host=" . self::$dbHost . ";"."port=".self::$port .";". "dbname=" . self::$dbName, self::$dbUsername, self::$dbUserPassword);
+            
             } catch (PDOException $e) {
                 die($e->getMessage());
             }
@@ -27,6 +29,5 @@ class Database {
     public static function disconnect() {
         self::$conexion = null;
     }
-
 }
 ?>
